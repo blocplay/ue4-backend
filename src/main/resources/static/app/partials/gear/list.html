@@ -1,0 +1,22 @@
+<a ui-sref="newGear" class="btn-primary btn-lg nodecoration">Add New gear</a>
+ 
+<table class="table geartable">
+  <tr>
+    <td>
+    	<h3>All gears</h3>
+    	Filter: <input ng-model="criteria" type="text">
+    </td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="gear in gears | filter:criteria | orderBy:['gemName']">
+    <td>
+    	<a ui-sref="editGear({gemId:gear.gemId})">{{gear.gemName}}</a>
+   	</td>
+    <td class="button-cell">
+      <a class="btn btn-primary"  ng-click="copyGear(gear)">Copy</a>
+    </td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteGear(gear)">Delete</a>
+    </td>
+  </tr>
+</table>

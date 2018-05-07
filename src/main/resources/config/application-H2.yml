@@ -1,0 +1,24 @@
+spring:
+  main:
+    show-banner: true
+server:
+  port: 9090
+  tomcat:
+    access-log-enabled: false
+databases:
+  connections:
+    -
+      jndi: jdbc/ue4tokenplay
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:file:E:/UE4/TestBackend/ue4
+      username: sa
+      password:
+      maxIdle: 1
+      maxActive: 1
+      maxWait:
+jooq:
+  dialect: H2
+comms:
+  broker: tcp://*:5555
+static:
+  home: file:/E:/UE4/HGGame/Content  

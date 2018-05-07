@@ -1,0 +1,11 @@
+server:
+  tomcat:
+    access-log-enabled: false
+quartz:
+  enabled: false
+comms:
+  broker: tcp://*:5555
+iirc:
+  enabled: false
+discord:
+  enabled: false

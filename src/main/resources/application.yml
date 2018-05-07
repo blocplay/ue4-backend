@@ -1,0 +1,33 @@
+spring:
+  view:
+    prefix: /jsp/
+    suffix: .jsp
+  datasource:
+    initialize: false
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+server:
+  context-path: /ue4
+activity_checker:
+  repeatInterval: 15000
+  startDelay: 30000
+gears_checker:
+  repeatInterval: 60000
+  startDelay: 30000
+credit_checker:
+  repeatInterval: 60000
+  startDelay: 30000
+leaderboard_updater:
+  repeatInterval: 300000
+  startDelay: 5000
+periodic:
+  enabled: true
+management:
+  context-path: /manage
+hazelcast:
+  multicast: false
+liquibase:
+  change_log: classpath:/db/changelog/db.changelog-master.xml
+discord:
+  enabled: false

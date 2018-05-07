@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ue4Backend
+#  profiles:
+#    active: test,local
+  cloud:
+    config:
+      enabled: false

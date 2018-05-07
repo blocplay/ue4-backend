@@ -1,0 +1,32 @@
+<form class="form-horizontal" role="form" ng-submit="addMapmode()">
+<table class="table mapmodetable">
+  <tr>
+    <td colspan="4"><h3>Map &amp; mode for {{server.srvName}}</h3></td>
+  </tr>
+  <tr>
+    <td>
+		<select
+			id="select_game_map"
+			class="form-control chooser"
+			name="select_game_map"
+			ng-model="mapmode.mamMapId"
+			ng-options="gamemap.mapId as gamemap.mapId for gamemap in gamemaps | orderBy:'mapId'">
+		</select>
+	</td>
+    <td>
+		<select
+			id="select_game_mode"
+			class="form-control chooser"
+			name="select_game_mode"
+			ng-model="mapmode.mamGamId"
+			ng-options="gamemode.gamId as gamemode.gamId for gamemode in gamemodes | orderBy:'gamId'">
+		</select>
+    </td>
+    <td class="button-cell">AI?<input type="checkbox" ng-model="mapmode.mamAiEnabled" class="form-control" id="mamAiEnabled" /></td>
+    <td class="button-cell">Enabled?<input type="checkbox" ng-model="mapmode.mamEnabled" class="form-control" id="mamEnabled" /></td>
+    <td class="button-cell">
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </td>
+  </tr>
+</table>
+</form>

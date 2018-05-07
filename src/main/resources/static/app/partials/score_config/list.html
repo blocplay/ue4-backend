@@ -1,0 +1,41 @@
+<a ui-sref="newScoreConfig" class="btn-primary btn-lg nodecoration">Add New score configuration</a>
+ 
+<h3>All score configurations</h3>
+ 
+ <table class="table scoreConfigtable">
+  <tr>
+    <th>Name</th>
+    <th>Minimum</th>
+    <th>Maximum</th>
+    <th>Matches</th>
+    <th>Months</th>
+    <th>Event scores</th>
+    <th>Leaderboard</th>
+  </tr>
+ 	<tr ng-repeat="scoreConfig in scoreConfigs | orderBy:'scoName'">
+     <td>
+       <a href="#" editable-text="scoreConfig.scoName" onaftersave="updateScoreConfig(scoreConfig)">{{ scoreConfig.scoName }}</a>
+     </td>
+     <td width="15%" class="ue4_editable_range">
+       <a href="#" editable-range="scoreConfig.scoMinimumFactor" e-max="2" e-min="0.1" e-step="0.1" onaftersave="updateScoreConfig(scoreConfig)">{{ scoreConfig.scoMinimumFactor }}</a>
+     </td>
+     <td width="15%" class="ue4_editable_range">
+       <a href="#" editable-range="scoreConfig.scoMaximumFactor" e-max="20" e-min="5" e-step="1" onaftersave="updateScoreConfig(scoreConfig)">{{ scoreConfig.scoMaximumFactor }}</a>
+     </td>
+     <td width="15%" class="ue4_editable_range">
+       <a href="#" editable-range="scoreConfig.scoNeutralMatches" e-max="100" e-min="10" e-step="10" onaftersave="updateScoreConfig(scoreConfig)">{{ scoreConfig.scoNeutralMatches }}</a>
+     </td>
+     <td width="15%" class="ue4_editable_range">
+       <a href="#" editable-range="scoreConfig.scoMonthsToConsider" e-max="3" e-min="1" e-step="1" onaftersave="updateScoreConfig(scoreConfig)">{{ scoreConfig.scoMonthsToConsider }}</a>
+     </td>
+     <td>
+      <a class="btn-info btn" ui-sref="event_scores({escScoId:scoreConfig.scoId})">edit</a>
+     </td>
+     <td>
+      <a class="btn-info btn" ui-sref="leaderboards({escScoId:scoreConfig.scoId})">view</a>
+     </td>
+	   <td class="button-cell">
+	     <a class="btn btn-danger"  ng-click="deleteScoreConfig(scoreConfig)">Delete</a>
+	   </td>
+  	</tr>
+ </table>

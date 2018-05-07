@@ -1,0 +1,109 @@
+<div class="form-group">
+	<label for="name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvName" e-name="name" e-required>{{
+			server.srvName || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Alias</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvAlias" e-name="alias" e-required>{{
+			server.srvAlias|| 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Description</label>
+	<div class="col-sm-10">
+		<span editable-textarea="server.srvDescription" e-name="description">{{
+			server.srvDescription }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Ip</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvIp" e-name="ip" e-required>{{
+			server.srvIp|| 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Match time</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvMatchTime" e-name="matchTime">{{
+			server.srvMatchTime|| 'map default' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Max. players</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvMaxPlayers" e-name="maxPlayers" e-required>{{
+			server.srvMaxPlayers|| 4 }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Max. bots</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvMaxBots" e-name="maxBots" e-required>{{
+			server.srvMaxBots|| 5 }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">UE4 port</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvUe4Port" e-name="ue4Port">{{
+			server.srvUe4Port || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">ZMQ port</label>
+	<div class="col-sm-10">
+		<span editable-text="server.srvZmqPort" e-name="zmqPort">{{
+			server.srvZmqPort || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Flags</label>
+	<div class="col-sm-10">
+		<ul class="checkbox-list">
+			<li>
+				<span editable-checkbox="server.srvUseCycle"
+					e-title="Uses mapcycle?"> {{ server.srvUseCycle &&
+					"Map cycle enabled" || "Map cycle NOT enabled!" }} </span>
+			</li>
+			<li>
+				<span editable-checkbox="server.srvUseCustomCycle"
+					e-title="Uses custom  mapcycle?"> {{ server.srvUseCustomCycle &&
+					"Using custom map cycle" || "Using global map cycle!" }} </span>
+				<span ng-if="server.srvUseCustomCycle" ng-show="!editableForm.$visible">
+					- <a ui-sref="custom_mapmodes({mamSrvId:server.srvId})">Edit server's mapcycle</a>
+				</span>	
+			</li>
+			<li>
+				<span editable-checkbox="server.srvDevelopment"
+					e-title="Is development server?"> {{ server.srvDevelopment &&
+					"Is development server" || "Is NOT development server" }} </span>
+			</li>
+			<li>
+				<span editable-checkbox="server.srvSanctioned"
+					e-title="Are matches sanctioned?"> {{ server.srvSanctioned &&
+					"Matches sanctioned" || "Matches NOT sanctioned!" }} </span>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<!-- button to show form -->
+		<button type="button" class="btn btn-default"
+			ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+			Edit</button>
+		<!-- buttons to submit / cancel form -->
+		<span ng-show="editableForm.$visible">
+			<button type="submit" class="btn btn-primary"
+				ng-disabled="editableForm.$waiting">Save</button>
+			<button type="button" class="btn btn-default"
+				ng-disabled="editableForm.$waiting"
+				ng-click="editableForm.$cancel()">Cancel</button>
+		</span>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+server:
+  port: 9090
+  tomcat:
+    access-log-enabled: false
+spring:
+  jooq:
+    sql-dialect: POSTGRES
+  datasource:
+    url: jdbc:postgresql://localhost/hgdb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimumIdle: 8
+      maximumPoolSize: 20
+      idleTimeout: 30000
+      maxLifetime: 1800000
+      #ConnectionTestQuery: SELECT 1
+quartz:
+  enabled: false
+comms:
+  broker: tcp://localhost:8924

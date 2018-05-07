@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:sec="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="
+   http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	 http://www.springframework.org/schema/security
+	 http://www.springframework.org/schema/security/spring-security.xsd
+	 ">
+
+  <!-- Enables the Spring MVC @Controller programming model
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+   http://www.springframework.org/schema/mvc
+   http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+  <mvc:resources mapping="/res/**" location="file:/E:/HG/UE4/HGGame/Content/UIResources/" />
+   -->
+
+  <!-- SECURITY
+   <sec:http entry-point-ref="restAuthenticationEntryPoint">
+      <sec:intercept-url pattern="/srest/**" access="ROLE_ADMIN"/>
+      <sec:form-login
+         authentication-success-handler-ref="restAuthenticationSuccessHandler"
+         authentication-failure-handler-ref="restAuthenticationFailureHandler"
+      />
+      <sec:logout success-handler-ref="restLogoutSuccessHandler" />
+   </sec:http>
+ 
+   <sec:authentication-manager alias="authenticationManager">
+      <sec:authentication-provider ref="customAuthenticationProvider" />
+   </sec:authentication-manager>
+   
+  END SECURITY -->
+</beans>

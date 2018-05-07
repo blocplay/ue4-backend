@@ -1,0 +1,32 @@
+<a ui-sref="newInventoryObject" class="btn-primary btn-lg nodecoration">Add New inventory object</a>
+ 
+<h3>All inventory objects</h3>
+ 
+ <table class="table inventoryObjecttable">
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Type</th>
+  </tr>
+ 	<tr ng-repeat="inventoryObject in inventoryObjects | orderBy:'inoName'">
+   		<td>
+   			<a href="#" editable-text="inventoryObject.inoName" onaftersave="updateInventoryObject(inventoryObject)">{{ inventoryObject.inoName }}</a>
+  		</td>
+      <td width="20%" class="ue4_editable_range">
+        <a href="#" editable-range="inventoryObject.inoSize" e-max="10" e-min="1" e-step="1" onaftersave="updateInventoryObject(inventoryObject)">{{ inventoryObject.inoSize }}</a>
+      </td>
+      <td width="15%">
+        <a href="#" editable-text="inventoryObject.inoType" onaftersave="updateInventoryObject(inventoryObject)">{{ inventoryObject.inoType || 'unspecified' }}</a>
+      </td>
+	   <td class="button-cell">
+	     <a class="btn btn-danger"  ng-click="deleteInventoryObject(inventoryObject)">Delete</a>
+	   </td>
+	   <!-- 
+  	</tr>
+ 	  <tr>
+   		<td colspan="2">
+		   	<a href="#" editable-text="inventoryObject.inoBluMaster" onaftersave="updateInventoryObject(inventoryObject)">{{ inventoryObject.inoBluMaster || "empty" }}</a>
+  		</td>
+  	</tr>
+  	 -->
+ </table>

@@ -1,0 +1,14 @@
+<a ui-sref="newGamemode" class="btn-primary btn-lg nodecoration">Add New mode</a>
+ 
+<table class="table gamemodetable">
+  <tr>
+    <td colspan="3"><h3>All game modes</h3></td>
+  </tr>
+  <tr ng-repeat="gamemode in gamemodes | orderBy:'gamId'">
+    <td width="30%">{{gamemode.gamId}}</td>
+    <td><a href="#" editable-text="gamemode.gamAssetName" onaftersave="updateGamemode(gamemode)">{{ gamemode.gamAssetName || "empty" }}</a></td>
+    <td>
+      <a class="btn btn-danger"  ng-click="deleteGamemode(gamemode)">Delete</a>
+    </td>
+  </tr>
+</table>

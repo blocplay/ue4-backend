@@ -1,0 +1,45 @@
+<div class="container" ng-controller="GamemapCtrl">
+	<!-- 
+	Filter: <input ng-model="query">
+	 -->
+	<form role="form" id="#select_game_map_form" method="POST">
+		<div class="form-group">
+			<label for="select_game_map">Game map</label>
+			<select
+				id="select_game_map"
+				class="form-control chooser"
+				name="select_game_map"
+				ng-model="myGameMap"
+				ng-options="gamemap.id for gamemap in gamemaps | filter:query | orderBy:'id'">
+				<option value="">-- new</option>
+			</select>
+		</div>
+	</form>
+	<form role="form" id="#game_map_form" method="POST">
+		<div class="form-group">
+			<label for="map_asset_name">Map id</label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Enter id" id="map_id"
+				name="map_id" 
+				ng-model="myGameMap.id"
+				required="required" />
+		</div>
+		<div class="form-group">
+			<label for="map_asset_name">Asset name</label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Enter name"
+				id="map_asset_name"
+				name="map_asset_name"
+				ng-model="myGameMap.assetName"
+				required="required" />
+		</div>
+		<div class="form-group">
+			<button type="submit" id="save" class="btn btn-primary">Save</button>
+			<button type="submit" id="remove" class="btn btn-danger">Remove</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,5 @@
+server:
+  port: 9292
+hazelcast:
+  port: 4602
+  cluster_info: http://localhost:9090/ue4/admin/cluster/info    

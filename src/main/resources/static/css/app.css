@@ -1,0 +1,273 @@
+body.waiting-for-angular nav.navbar, body.waiting-for-angular div.main-container
+	{
+	display: none;
+}
+
+body.waiting-for-angular div#initializing-panel {
+	display: block;
+	background-color: rgba(0, 0, 0, 0.85);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#loadingMsg {
+	font-family: "Orbitron", Arial, sans-serif;
+	color: #2a9fd6;
+	width: 100%;
+	text-align: center;
+	font-size: 1.75em;
+	letter-spacing: 0.1em;
+	margin-top: 5em;
+}
+
+#login-holder {
+	background-color: rgba(0, 0, 0, 0.25);
+	height: 100% !important;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+}
+
+#loginbox {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+#login-inner {
+	max-width: 450px;
+	padding: 15px 30px 30px 30px;
+	margin: 0 auto;
+	border-radius: 5px;
+	border: thin solid #1f79a3;
+	background-color: rgba(0, 0, 0, 0.85);
+	color: #2a9fd6;
+}
+
+#login-inner table {
+	width: 100%;
+}
+
+#login-inner td {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	box-sizing: border-box;
+	width: 60%;
+}
+
+#login-inner td.button_bar {
+	text-align: right;
+}
+
+#login-inner .form-control:focus {
+	z-index: 2;
+}
+
+#login-inner input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#login-inner input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.animate .bar {
+	background-color: #2a9fd6;
+	background-image: linear-gradient(45deg, #2a9fd6 25%, #a0eaff);
+	width: 11px;
+	height: 8px;
+	opacity: 0;
+	animation: fill 1s infinite linear forwards;
+}
+
+ul#loadbar {
+	list-style: none;
+	width: 15em;
+	margin: 0 auto;
+	padding-top: 2em;
+}
+
+ul#loadbar li {
+	float: left;
+	position: relative;
+	width: 11px;
+	height: 8px;
+	margin-left: 1px;
+	border-left: 1px solid #111;
+	border-top: 1px solid #111;
+	border-right: 1px solid #333;
+	border-bottom: 1px solid #333;
+	background: #000;
+}
+
+ul#loadbar li:first-child {
+	margin-left: 0;
+}
+
+#layerFill1 {
+	animation-delay: 0.1s;
+}
+
+#layerFill2 {
+	animation-delay: 0.2s;
+}
+
+#layerFill3 {
+	animation-delay: 0.3s;
+}
+
+#layerFill4 {
+	animation-delay: 0.4s;
+}
+
+#layerFill5 {
+	animation-delay: 0.5s;
+}
+
+#layerFill6 {
+	animation-delay: 0.6s;
+}
+
+#layerFill7 {
+	animation-delay: 0.7s;
+}
+
+#layerFill8 {
+	animation-delay: 0.8s;
+}
+
+#layerFill9 {
+	animation-delay: 0.9s;
+}
+
+#layerFill10 {
+	animation-delay: 1s;
+}
+
+#main-container table.table td.button-cell {
+	width: 5%;
+	text-align: center;
+}
+
+@
+keyframes fill { 0% {
+	opacity: 0;
+}
+
+10%{
+opacity
+
+
+
+
+
+
+:
+
+
+
+
+
+
+1;
+}
+;
+100%{
+opacity
+
+
+
+
+
+
+:
+
+
+
+
+
+
+1;
+}
+;
+}
+
+/* Pre angularjs, probably need to be revised */
+.form-group BUTTON {
+	margin-right: 2em;
+}
+
+label.valid {
+	width: 24px;
+	height: 24px;
+	background: url(assets/img/valid.png) center center no-repeat;
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	margin-top: 2px;
+}
+
+.chooser {
+	background: #DDD !important;
+	font-weight: bold;
+	font-size: .95em;
+}
+
+.base_gear {
+	font-size: .85em;
+	color: #777;
+}
+
+.panel-group {
+	margin-bottom: 1em;
+}
+
+table.stats {
+	width: 25%;
+}
+
+table.stats TD {
+	text-align: right;
+}
+
+button#logout {
+	margin-left: 1em;
+}
+
+.editable-input.editable-has-buttons {
+	width: 100%;
+}
+
+.editable-buttons button {
+	margin-right: 5px !important;
+}
+
+form.form-inline {
+	width: 100%;
+}
+
+.form-inline .form-group {
+	padding-right: 7em;
+	width: 100%;
+}
+
+UL.checkbox-list LI {
+	padding-left: 1em;
+}
+
+TD.ue4_editable_range .form-inline .form-group {
+    padding-right: 9em;
+}

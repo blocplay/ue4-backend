@@ -1,0 +1,190 @@
+<div class="form-group">
+	<label for="name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-4">
+		<span editable-text="gear.gemName" e-name="name" e-required>{{
+			gear.gemName || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Head</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesHead" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'HEAD'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesHead) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Torso</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesTorso" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'TORSO'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesTorso) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Engine</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesEngine" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'ENGINE'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesEngine) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Fuel tank</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesFuelTank" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'FUEL_TANK'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesFuelTank) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Hip</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesHip" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'HIP'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesHip) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left Pylon</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesPylonLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'PYLON_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesPylonLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right Pylon</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesPylonRight" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'PYLON_RIGHT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesPylonRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left Shoulder</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesShoulderLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'SHOULDER_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesShoulderLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right Shoulder</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesShoulderRight"
+			e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'SHOULDER_RIGHT'} | orderBy:'gesName')"
+			>{{ getSectionName(gear.gemGesShoulderRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left UpperArm</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesUpperArmLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'UPPER_ARM_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesUpperArmLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right UpperArm</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesUpperArmRight"
+			e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'UPPER_ARM_RIGHT'} | orderBy:'gesName')"
+			>{{ getSectionName(gear.gemGesUpperArmRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left LowerArm</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesLowerArmLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'LOWER_ARM_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesLowerArmLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right LowerArm</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesLowerArmRight"
+			e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'LOWER_ARM_RIGHT'} | orderBy:'gesName')"
+			>{{ getSectionName(gear.gemGesLowerArmRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left Hand</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesHandLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'HAND_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesHandLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right Hand</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesHandRight" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'HAND_RIGHT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesHandRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left UpperLeg</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesUpperLegLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'UPPER_LEG_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesUpperLegLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right UpperLeg</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesUpperLegRight"
+			e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'UPPER_LEG_RIGHT'} | orderBy:'gesName')"
+			>{{ getSectionName(gear.gemGesUpperLegRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left LowerLeg</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesLowerLegLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'LOWER_LEG_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesLowerLegLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right LowerLeg</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesLowerLegRight"
+			e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'LOWER_LEG_RIGHT'} | orderBy:'gesName')"
+			>{{ getSectionName(gear.gemGesLowerLegRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Left Foot</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesFootLeft" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'FOOT_LEFT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesFootLeft) || 'empty' }}</span>
+	</div>
+	<label class="col-sm-2 control-label">Right Foot</label>
+	<div class="col-sm-4">
+		<span editable-select="gear.gemGesFootRight" e-name="description"
+			e-ng-options="gearsection.gesId as gearsection.gesName for gearsection in (gearsections | filter: {gesType:'FOOT_RIGHT'} | orderBy:'gesName')"
+			>{{
+			getSectionName(gear.gemGesFootRight) || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<!-- button to show form -->
+		<button type="button" class="btn btn-default"
+			ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+			Edit</button>
+		<!-- buttons to submit / cancel form -->
+		<span ng-show="editableForm.$visible">
+			<button type="submit" class="btn btn-primary"
+				ng-disabled="editableForm.$waiting">Save</button>
+			<button type="button" class="btn btn-default"
+				ng-disabled="editableForm.$waiting"
+				ng-click="editableForm.$cancel()">Cancel</button>
+		</span>
+	</div>
+</div>

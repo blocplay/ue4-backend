@@ -1,0 +1,14 @@
+<a ui-sref="newGearSectionConfiguration(({gscGesId:gscGesId}))" class="btn-primary btn-lg nodecoration">Add new property to {{gearsection.gesName}}</a>
+ 
+<table class="table sectionconfigurationtable">
+  <tr>
+    <td colspan="2"><h3>All properties for {{gearsection.gesName}} gear section</h3></td>
+  </tr>
+  <tr ng-repeat="gearsectionconfiguration in gearsectionconfigurations | orderBy:['gscPropertyName']">
+    <td><a href="#" editable-text="gearsectionconfiguration.gscPropertyName" onaftersave="updateGearSectionConfiguration(gearsectionconfiguration)">{{ gearsectionconfiguration.gscPropertyName }}</a></td>
+    <td><a href="#" editable-text="gearsectionconfiguration.gscValue" onaftersave="updateGearSectionConfiguration(gearsectionconfiguration)">{{ gearsectionconfiguration.gscValue }}</a></td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteGearSectionConfiguration(gearsectionconfiguration)">Delete</a>
+    </td>
+  </tr>
+</table>

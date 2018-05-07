@@ -1,0 +1,35 @@
+<a ui-sref="newServer" class="btn-primary btn-lg nodecoration">Add New server</a>
+ 
+<table class="table servertable">
+  <tr>
+    <td>
+    	<h3>All servers</h3>
+    	Filter: <input ng-model="criteria" type="text">
+    </td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="server in servers | filter:criteria | orderBy:['srvPilId','srvName']">
+    <td>
+	    <span ng-if="server.srvPilId==null" style="font-size:1em; color:darkblue" class="glyphicon glyphicon-home"></span>
+    	<a ui-sref="editServer({srvId:server.srvId})">{{server.srvName}} ( {{server.srvAlias}} )</a>
+   	</td>
+    <td>
+		<select
+			id="select_championship"
+			class="form-control chooser"
+			name="select_championship"
+			ng-model="server.srvChaId"
+			ng-options="championship.chaId as championship.chaName for championship in championships | orderBy:'chaName'"
+			ng-change="updateChampionship(server)"
+			>
+				<option value="" selected>--Not running a championship</option>
+		</select>
+    </td>
+   	<!-- 
+    <td>{{ server.srvUseCycle && "Map cycle enabled" || "Map cycle NOT enabled!" }}</td>
+     -->
+    <td>
+      <a class="btn btn-danger"  ng-click="deleteServer(server)">Delete</a>
+    </td>
+  </tr>
+</table>

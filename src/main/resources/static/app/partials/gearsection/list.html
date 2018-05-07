@@ -1,0 +1,18 @@
+<a ui-sref="newGearSection" class="btn-primary btn-lg nodecoration">Add New gear section</a>
+ 
+<table class="table gearsectiontable">
+  <tr>
+    <td colspan="3">
+      <h3>All gear sections</h3>
+      Filter: <input ng-model="criteria.gesType" type="text">
+    </td>
+  </tr>
+  <tr ng-repeat="gearsection in gearsections| filter:criteria | orderBy:['gesType','gesName']">
+    <td>{{gearsection.gesType}}</td>
+    <td><a href="#" editable-text="gearsection.gesName" onaftersave="updateGearSection(gearsection)">{{ gearsection.gesName }}</a></td>
+    <td><a ui-sref="gearsection_configurations({gscGesId:gearsection.gesId})">Edit section properties</a></td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteGearSection(gearsection)">Delete</a>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,21 @@
+server:
+  port: 9090
+  tomcat:
+    access-log-enabled: false  
+databases:
+  connections:
+    -
+      jndi: jdbc/ue4tokenplay
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1/hgdb
+      username:
+      password:
+      maxIdle: 1
+      maxActive: 1
+      maxWait:
+jooq:
+  dialect: MYSQL
+comms:
+  broker: tcp://localhost:8888
+static:
+  home: file:/E:/HG/UE4/HGGame/Content  

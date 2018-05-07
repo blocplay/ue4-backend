@@ -1,0 +1,28 @@
+<form class="form-horizontal" role="form" ng-submit="addGearSection()">
+<table class="table gearsectiontable">
+  <tr>
+    <td colspan="4"><h3>Gear section</h3></td>
+  </tr>
+  <tr>
+    <td>
+		<label for="title" class="col-sm-2 control-label">Name</label>
+    </td>
+    <td>
+		<input type="text" ng-model="gearsection.gesName" class="form-control" id="gesName"
+			placeholder="Section name" />
+    </td>
+    <td>
+		<select
+			id="select_section_type"
+			class="form-control chooser"
+			name="select_section_type"
+			ng-model="gearsection.gesType"
+			ng-options="xgearsection.gesType as xgearsection.gesType for xgearsection in gearsections  | unique:'gesType' | orderBy:'gesType'">
+		</select>
+	</td>
+    <td class="button-cell">
+      <input type="submit" class="btn btn-primary" value="Save" />
+    </td>
+  </tr>
+</table>
+</form>

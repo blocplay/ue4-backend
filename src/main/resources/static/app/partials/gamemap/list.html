@@ -1,0 +1,14 @@
+<a ui-sref="newGamemap" class="btn-primary btn-lg nodecoration">Add New map</a>
+ 
+<table class="table gamemaptable">
+  <tr>
+    <td colspan="3"><h3>All maps</h3></td>
+  </tr>
+  <tr ng-repeat="gamemap in gamemaps | orderBy:'mapId'">
+    <td width="30%">{{gamemap.mapId}}</td>
+    <td><a href="#" editable-text="gamemap.mapAssetName" onaftersave="updateGamemap(gamemap)">{{ gamemap.mapAssetName || "empty" }}</a></td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteGamemap(gamemap)">Delete</a>
+    </td>
+  </tr>
+</table>

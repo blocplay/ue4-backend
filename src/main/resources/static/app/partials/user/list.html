@@ -1,0 +1,30 @@
+<h3>All users</h3>
+Filter:
+<input ng-model="criteria" type="text">
+<p />
+<dir-pagination-controls></dir-pagination-controls>
+<table class="table usertable">
+	<tr>
+    <th style="text-align:center">Email</th>
+    <th style="text-align:center">Callsign</th>
+		<th style="text-align:center">Steam id</th>
+    <th style="text-align:center">Can play?</th>
+    <th style="text-align:center">Actions</th>
+	</tr>
+	<tr	  	  
+		dir-paginate="user in users | filter:criteria | orderBy:['email'] | itemsPerPage: 10"
+		style="vertical-align:middle; height: 2em;"
+		>
+		<td style="vertical-align:middle;"><a href="#" editable-text="user.email" onaftersave="updateUser(user)">{{ user.email}}</a></td>
+		<td style="vertical-align:middle;"><a href="#" editable-text="user.name" onaftersave="updateUser(user)">{{ user.name }}</a></td>
+		<td style="vertical-align:middle;text-align:center;"><a href="#" editable-text="user.steamId" onaftersave="updateUser(user)">{{ user.steamId || 'no id' }}</a></td>
+		<td style="vertical-align:middle; text-align:center">
+		  <span ng-if="user.enabled" style="font-weight:bold;font-size:1em;color:green" class="glyphicon glyphicon-ok"></span>
+	    <a class="btn btn-success" ng-if="!user.enabled" ng-click="enableUser(user)">Enable</a>
+    </td>
+		<td style="vertical-align:middle; text-align:center">
+      &nbsp;
+		  <a class="btn btn-danger" ng-if="!user.enabled" ng-click="deleteUser(user)">Delete</a>
+		</td>
+	</tr>
+</table>

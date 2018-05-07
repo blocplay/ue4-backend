@@ -1,0 +1,17 @@
+<a ui-sref="newEventScore(({escScoId:escScoId}))" class="btn-primary btn-lg nodecoration">Add New event score to {{scoreConfig.scoName}}</a>
+ 
+<table class="table eventscoretable">
+  <tr>
+    <td colspan="1"><h3>All scores for '{{scoreConfig.scoName}}' score configuration</h3></td>
+    <td colspan="2"><a class="btn-info btn"  ui-sref="score_configs">back to score configurations</a></td>
+  </tr>
+  <tr ng-repeat="eventscore in eventscores | orderBy:'escEventType'">
+    <td>{{eventscore.escEventType}}</td>
+    <td width="15%" class="ue4_editable_range">
+      <a href="#" editable-range="eventscore.escEventScore" e-max="1000" e-min="-1000" e-step="50" onaftersave="updateEventScore(eventscore)">{{ eventscore.escEventScore }}</a>
+    </td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteEventScore(eventscore)">Delete</a>
+    </td>
+  </tr>
+</table>

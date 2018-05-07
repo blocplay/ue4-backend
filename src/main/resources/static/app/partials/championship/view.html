@@ -1,0 +1,8 @@
+<h3><a ui-sref="editChampionship({chaId:championship.chaId})">{{championship.chaName}}</a></h3>
+Filter: <input ng-model='criteria.pilCallsign'>
+<dir-pagination-controls></dir-pagination-controls>
+<table class="table championshiptable">
+  <tr dir-paginate="pilot in pilots | filter: criteria | orderBy:['pilCallsign'] | itemsPerPage: 10">
+    <td>{{ pilot.pilCallsign }}</td>
+  </tr>
+</table>

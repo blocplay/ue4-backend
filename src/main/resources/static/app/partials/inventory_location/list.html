@@ -1,0 +1,25 @@
+<a ui-sref="newInventoryLocation" class="btn-primary btn-lg nodecoration">Add New inventory location</a>
+ 
+<h3>All inventory locations</h3>
+ 
+ <table class="table inventoryLocationtable">
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Restrict to type</th>
+  </tr>
+ 	<tr ng-repeat="inventoryLocation in inventoryLocations | orderBy:'inlName'">
+      <td>
+        <a href="#" editable-text="inventoryLocation.inlName" onaftersave="updateInventoryLocation(inventoryLocation)">{{ inventoryLocation.inlName }}</a>
+      </td>
+      <td width="20%" class="ue4_editable_range">
+        <a href="#" editable-range="inventoryLocation.inlSize" e-max="10" e-min="1" e-step="1" onaftersave="updateInventoryLocation(inventoryLocation)">{{ inventoryLocation.inlSize }}</a>
+      </td>
+      <td width="15%">
+        <a href="#" editable-text="inventoryLocation.inlRestrictedType" onaftersave="updateInventoryLocation(inventoryLocation)">{{ inventoryLocation.inlRestrictedType || 'unrestricted' }}</a>
+      </td>
+	   <td class="button-cell">
+	     <a class="btn btn-danger"  ng-click="deleteInventoryLocation(inventoryLocation)">Delete</a>
+	   </td>
+  	</tr>
+ </table>

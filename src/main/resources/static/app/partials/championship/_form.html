@@ -1,0 +1,44 @@
+<div class="form-group">
+	<label for="name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<span editable-text="championship.chaName" e-name="name" e-required>{{
+			championship.chaName || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Description</label>
+	<div class="col-sm-10">
+		<span editable-textarea="championship.chaDescription" e-name="description">{{
+			championship.chaDescription }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">Init date</label>
+	<div class="col-sm-10">
+		<span editable-text="championship.chaDateInit" e-name="dateInit">{{
+			championship.chaDateInit || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label">End date</label>
+	<div class="col-sm-10">
+		<span editable-text="championship.chaDateEnd" e-name="dateEnd">{{
+			championship.chaDateEnd || 'empty' }}</span>
+	</div>
+</div>
+<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-10">
+		<!-- button to show form -->
+		<button type="button" class="btn btn-default"
+			ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+			Edit</button>
+		<!-- buttons to submit / cancel form -->
+		<span ng-show="editableForm.$visible">
+			<button type="submit" class="btn btn-primary"
+				ng-disabled="editableForm.$waiting">Save</button>
+			<button type="button" class="btn btn-default"
+				ng-disabled="editableForm.$waiting"
+				ng-click="editableForm.$cancel()">Cancel</button>
+		</span>
+	</div>
+</div>

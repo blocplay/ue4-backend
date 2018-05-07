@@ -1,0 +1,5 @@
+<form class="form-horizontal" editable-form name="editableForm" onaftersave="updateChampionship()">
+	<h3>{{championship.chaName}}</h3>
+	<a ui-sref="viewChampionship({chaId:championship.chaId})">View registered pilots</a>
+	<div ng-include="'partials/championship/_form.html'"></div>
+</form>

@@ -1,0 +1,59 @@
+<h3>Leaderboard using '{{scoreConfig.scoName}}' score configuration</h3>
+<table width="100%">
+  <tr>
+    <th>Score Configuration</th>
+    <th>Minimum</th>
+    <th>Maximum</th>
+    <th>Matches</th>
+    <th>Months</th>
+    <th>Events</th>
+  </tr>
+  <tr>
+    <td style="padding:0.5em;">
+			<select
+			  class="form-control chooser"
+			  name="select_score_config"
+			  ng-model="scoreConfig"
+			  ng-options="scoreConfig as scoreConfig.scoName for scoreConfig in (scoreConfigs | orderBy:'scoName') track by scoreConfig.scoId">
+			</select>
+    </td>
+    <td>{{ scoreConfig.scoMinimumFactor }}</td>
+    <td>{{ scoreConfig.scoMaximumFactor }}</td>
+    <td>{{ scoreConfig.scoNeutralMatches }}</td>
+    <td>{{ scoreConfig.scoMonthsToConsider }}</td>
+    <td>
+      <ul>
+        <li ng-repeat="eventscore in eventscores | orderBy:'escEventType'">
+          {{eventscore.escEventType}}: {{eventscore.escEventScore}}
+        </li>
+      </ul>
+    <td>
+  </tr>
+</table>
+<a style="float:right" class="btn-info btn"  ui-sref="score_configs">back to score configurations</a>
+<table class="table leaderboardtable">
+  <tr>
+    <th>[#]</th>
+    <th>Average Score</th>
+    <th>Matches</th>
+    <th>Factor</th>
+    <th>Final Score</th>
+    <th>Callsign</th>
+    <th>Events</th>
+  </tr>
+  <tr ng-repeat="pilotstat in pilotstats | orderBy:'position'">
+    <td width="5%">#{{pilotstat.position}}</td>
+    <td width="15%">{{pilotstat.avgScore | number:2}}</td>
+    <td width="5%">{{pilotstat.matches}}</td>
+    <td width="5%">{{pilotstat.factor | number:2}}</td>
+    <td width="15%">{{pilotstat.ajustedAvgScore | number:2}}</td>
+    <td>{{pilotstat.callsign}}</td>
+    <td>
+      <ul>
+        <li ng-repeat="(key, value) in pilotstat.eventsCount | orderBy:key">
+          {{key}}: {{value}}
+        </li>
+      </ul>
+    <td>
+  </tr>
+</table>

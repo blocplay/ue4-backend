@@ -1,0 +1,20 @@
+<a ui-sref="customNewMapmode(({mamSrvId:mamSrvId}))" class="btn-primary btn-lg nodecoration">Add New map/mode combo to {{server.srvName}}</a>
+ 
+<table class="table mapmodetable">
+  <tr>
+    <td colspan="3"><h3>All map modes for <a ui-sref="editServer({srvId:server.srvId})">{{server.srvName}}</a> map cycle</h3></td>
+    <td colspan="3"><a class="btn btn-default" click-and-disable="reloadMapCycle(server)">Reload map cycle</a></td>
+  </tr>
+  <tr ng-repeat="mapmode in mapmodes | orderBy:['mamMapId','mamGamId','mamAiEnabled']">
+    <td>{{mapmode.mamMapId}}</td>
+    <td>{{mapmode.mamGamId}}</td>
+    <td class="button-cell"><a href="#" editable-text="mapmode.mamMatchTime" onaftersave="updateMapmode(mapmode)">{{ mapmode.mamMatchTime || 'default' }}</a></td>
+    <td class="button-cell" ng-if="!mapmode.mamAiEnabled"><span style="font-weight:bold;font-size:2em;text-decoration:line-through; color:red" no-class="glyphicon glyphicon-remove">AI</span></td>
+    <td class="button-cell" ng-if="mapmode.mamAiEnabled"><span style="font-weight:bold;font-size:2em;color:green" no-class="glyphicon glyphicon-ok">AI</span></td>
+    <td class="button-cell" ng-if="!mapmode.mamEnabled"><a class="btn btn-default"  ng-click="ableMapmode(mapmode,true)">Enable</a></td>
+    <td class="button-cell" ng-if="mapmode.mamEnabled"><a class="btn btn-warning"  ng-click="ableMapmode(mapmode,false)">Disable</a></td>
+    <td class="button-cell">
+      <a class="btn btn-danger"  ng-click="deleteMapmode(mapmode)">Delete</a>
+    </td>
+  </tr>
+</table>

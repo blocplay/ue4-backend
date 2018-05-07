@@ -1,0 +1,22 @@
+spring:
+  jooq:
+    sql-dialect: POSTGRES
+  datasource:
+    url: jdbc:postgresql://localhost:6439/hgdb
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimumIdle: 2
+      maximumPoolSize: 4
+      idleTimeout: 30000
+      maxLifetime: 1800000
+      ConnectionTestQuery: SELECT 1
+server:
+  tomcat:
+    access-log-enabled: false
+quartz:
+  enabled: false
+comms:
+  broker: tcp://*:5555
+  chat-disabled: true

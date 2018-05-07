@@ -1,0 +1,19 @@
+<h3>Currently active servers</h3>
+<table class="table servertable">
+  <tr>
+  	<th>Version</th>
+  	<th>Server</th>
+  	<th style="width:12em">Match</th>
+  	<th>Map &amp; mode</th>
+  	<th>Players</th>
+  </tr>
+  <tr ng-repeat="server in activeServers">
+    <td width="10%">{{server[6]}}</td>
+    <td><a ui-sref="editServer({srvId:server[2]})">{{server[1]}} ( {{server[0]}} )</a><br/>{{server[5]}}</td>
+    <td>{{server[11]}}<br/>{{server[14]+server[15]}} playing ({{server[14]}} human)</td>
+    <td>{{server[7]}}<br/>{{server[8]}}</td>
+    <td width="5%">{{server[13]}}/{{server[12]}}</td>
+    <td class="button-cell"><a class="btn btn-default" ng-click="reloadMapCyle(server)">Reload cycle</a></td>
+    <td class="button-cell"><a class="btn btn-default" ng-click="stopMap(server)">Stop map</a></td>
+  </tr>
+</table>

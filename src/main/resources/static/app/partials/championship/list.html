@@ -1,0 +1,20 @@
+<a ui-sref="newChampionship" class="btn-primary btn-lg nodecoration">Add New championship</a>
+ 
+<table class="table championshiptable">
+  <tr>
+    <td><h3>All championships</h3></td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="championship in championships | orderBy:['chaName']">
+    <td>
+    	<a ui-sref="editChampionship({chaId:championship.chaId})">{{championship.chaName}}</a>
+    	<br/>
+    	{{championship.chaDescription}}
+   	</td>
+    <td>{{ championship.chaDateInit }}</td>
+    <td>{{ championship.chaDateEnd }}</td>
+    <td>
+      <a class="btn btn-danger"  ng-click="deleteChampionship(championship)">Delete</a>
+    </td>
+  </tr>
+</table>
